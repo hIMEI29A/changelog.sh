@@ -16,6 +16,14 @@ pressAny() {
 	read ANY
 }
 
+# Print colorized warning message
+warning() {
+	echo -e "\e[1;31mWARNING!!!
+	
+	\e[1;35mTemp file CHANGELOG1.md will be created now. 
+	Edit it and save as CHANGELOG.md\e[0m"
+}
+
 # ClI args processing
 
 # if there is no args provided, print usage and exit
@@ -50,7 +58,7 @@ then
 	
 	changelog finalize --version=$VERSION
 	
-	echo "Temp file CHANGELOG1.md will be created now. Edit it and save as CHANGELOG.md"
+	warning
 	
 	pressAny
 	
